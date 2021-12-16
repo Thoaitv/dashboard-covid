@@ -30,11 +30,7 @@
     <div class="regional-select">
       <p class="title">Country and Regional</p>
       <div class="select-box">
-        <select
-          class="mb-4 btn border"
-          (change)="showData()"
-          [(ngModel)]="option"
-        >
+        <select class="mb-4 btn border" (change)="showData()" [(ngModel)]="option">
           <ng-container *ngFor="let item of countryList; let i = index">
             <option value="{{ i }}">
               {{ item.countryregion }}
@@ -43,6 +39,7 @@
         </select>
       </div>
     </div>
+
   </div>
 
   <div *ngIf="coronaData != null" class="statistic">

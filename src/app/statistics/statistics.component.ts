@@ -15,7 +15,10 @@ export class StatisticsComponent implements OnInit {
   allCase: any;
   allCaseRate: any;
 
-  constructor(private myService: CovidInfoService) {}
+  isListCountries: boolean = false;
+  isConntry: boolean = true;
+
+  constructor(private myService: CovidInfoService) { }
 
   ngOnInit(): void {
     this.getVietNamCase();
@@ -63,10 +66,21 @@ export class StatisticsComponent implements OnInit {
       .toPromise()
       .then(
         (data) =>
-          (this.option = data.findIndex(
-            (item) => item.countryregion == 'Vietnam'
-          ))
+        (this.option = data.findIndex(
+          (item) => item.countryregion == 'Vietnam'
+        ))
       );
     this.myService.changeCountryCode(this.option);
   }
+
+
+  showListCountries() {
+    this.isListCountries = true;
+    this.isConntry = false;
+  }
+  showCountry() {
+    this.isListCountries = false;
+    this.isConntry = true;
+  }
+
 }

@@ -12,6 +12,8 @@ import { ChartsComponent } from './charts/charts.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CountUpModule } from 'ngx-countup';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ListCountriesComponent } from './list-countries/list-countries.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { CountUpModule } from 'ngx-countup';
     StatisticsComponent,
     MapComponent,
     ChartsComponent,
+    ListCountriesComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,8 +32,9 @@ import { CountUpModule } from 'ngx-countup';
     NgxChartsModule,
     BrowserAnimationsModule,
     CountUpModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -22,11 +22,13 @@
     "@angular/router": "~10.2.0",
     "@asymmetrik/ngx-leaflet": "^8.1.0",
     "@swimlane/ngx-charts": "^16.0.0",
+    "jspdf": "^2.4.0",
     "leaflet": "^1.7.1",
     "ngx-countup": "^7.3.3",
     "ngx-pagination": "^5.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "xlsx": "^0.17.4",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

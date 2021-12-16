@@ -1,7 +1,27 @@
 <div class="container border p-3 mt-3">
   <app-statistics></app-statistics>
   <div class="row app">
-    <div class="col-md-6 col-sm-12"><app-map></app-map></div>
-    <div class="col-md-6 col-sm-12"><app-charts></app-charts></div>
+    <div class="col-md-6 col-sm-12">
+      <app-map></app-map>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <app-charts></app-charts>
+    </div>
+    <div class="col-12">
+      <div class="button">
+        <button type="button" class="btn btn-primary" (click)="showListCountries()"
+          *ngIf="isListCountries === false">Show
+          list countries</button>
+        <button type="button" class="btn btn-primary" (click)="showCountry()" *ngIf="isListCountries === true">Show
+          Country</button>
+        <button type="button" class="btn btn-success mx-4" *ngIf="isListCountries === true"
+          (click)="exportexcel()">Export to Excel</button>
+        <button type="button" class="btn btn-warning" *ngIf="isListCountries === true" (click)="exportPDF()">Export to
+          PDF</button>
+      </div>
+      <div *ngIf="isListCountries === true">
+        <app-list-countries></app-list-countries>
+      </div>
+    </div>
   </div>
 </div>
