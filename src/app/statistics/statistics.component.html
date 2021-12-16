@@ -1,0 +1,70 @@
+<div class="statistic-com">
+  <h2>World Wide</h2>
+  <ng-container *ngIf="allCase != null">
+    <div class="statistic">
+      <div class="statistic-confirmed item">
+        <div class="title"><i class="fas fa-user mr-2"></i>Confirmed</div>
+        <div [countUp]="allCase.confirmed" class="data"></div>
+      </div>
+      <div class="statistic-recovered item">
+        <div class="title">
+          <i class="fas fa-briefcase-medical mr-2"></i>Recovered
+        </div>
+        <div class="data" [countUp]="allCase.recovered"></div>
+      </div>
+      <div class="statistic-deaths item">
+        <div class="title"><i class="fas fa-procedures mr-2"></i>Deaths</div>
+        <div class="data" [countUp]="allCase.deaths"></div>
+      </div>
+      <div class="statistic-rate item">
+        <div class="title">
+          <i class="fas fa-exclamation-circle mr-2"></i>fatality Rate
+        </div>
+        <div class="data">{{ allCaseRate }} %</div>
+      </div>
+    </div>
+  </ng-container>
+
+  <div class="regional-title mf-5 ml-1 d-flex">
+    <h2 class="mr-2 d-inline">Regional</h2>
+    <div class="regional-select">
+      <p class="title">Country and Regional</p>
+      <div class="select-box">
+        <select
+          class="mb-4 btn border"
+          (change)="showData()"
+          [(ngModel)]="option"
+        >
+          <ng-container *ngFor="let item of countryList; let i = index">
+            <option value="{{ i }}">
+              {{ item.countryregion }}
+            </option>
+          </ng-container>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="coronaData != null" class="statistic">
+    <div class="statistic-confirmed-c item">
+      <div class="title"><i class="fas fa-user mr-2"></i>Confirmed</div>
+      <div [countUp]="coronaData.confirmed" class="data"></div>
+    </div>
+    <div class="statistic-recovered-c item">
+      <div class="title">
+        <i class="fas fa-briefcase-medical mr-2"></i>Recovered
+      </div>
+      <div [countUp]="coronaData.recovered" class="data"></div>
+    </div>
+    <div class="statistic-deaths-c item">
+      <div class="title"><i class="fas fa-procedures mr-2"></i>Deaths</div>
+      <div [countUp]="coronaData.deaths" class="data"></div>
+    </div>
+    <div class="statistic-rate-c item">
+      <div class="title">
+        <i class="fas fa-exclamation-circle mr-2"></i>fatality Rate
+      </div>
+      <div class="data">{{ fatalityRate }} %</div>
+    </div>
+  </div>
+</div>
