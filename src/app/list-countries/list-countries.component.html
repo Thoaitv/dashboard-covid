@@ -1,0 +1,23 @@
+<div class="col-8 mt-5" id="pdfTable" #pdfTable>
+    <table class="table table-striped" id="excel-table">
+        <thead>
+            <tr>
+                <th scope="col">countryregion</th>
+                <th scope="col">confirmed</th>
+                <th scope="col">deaths</th>
+                <th scope="col">recovered</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let country of countryList | paginate: { itemsPerPage: 10, currentPage: p }">
+                <th scope="row">{{country.countryregion}}</th>
+                <td>{{country.confirmed}}</td>
+                <td>{{country.deaths}}</td>
+                <td>{{country.recovered}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
