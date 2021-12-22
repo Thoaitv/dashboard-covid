@@ -1,0 +1,26 @@
+<div class="navbar">
+
+    <div class="user">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8sQ2H9-KV3eyAFIIdrBZfGZnRN9yVDQzQ1BhOJs41MRR-Vl8FFSd9NotrxSus9fk4WpU&usqp=CAU"
+            alt="">
+    </div>
+    <div class="menu">
+        <div class="menu-head">
+            <span>COVID-19</span>
+        </div>
+        <div class="menu-item">
+            <button mat-button class="menu-button" [routerLink]="['/statistics']">
+                <mat-icon>dashboard</mat-icon>
+                <span>Home</span>
+            </button>
+            <button mat-button class="menu-button" [routerLink]="['/news']">
+                <mat-icon>comment</mat-icon>
+                <span>News</span>
+            </button>
+            <button mat-button class="menu-button" [routerLink]="['/list-regional']">
+                <mat-icon> show_chart</mat-icon>
+                <span>List Country</span>
+            </button>
+        </div>
+    </div>
+</div>

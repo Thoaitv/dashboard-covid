@@ -1,0 +1,84 @@
+<div class="container page">
+
+    <div class="page__box">Statistics</div>
+
+    <div class="page__content">
+        <h1>World Wide</h1>
+        <mat-grid-list [cols]="breakpoint" rowHeight="2:0.75" (window:resize)="onResize($event)">
+            <mat-grid-tile class="confirmed">
+                <div class="title ">
+                    <p>Total</p>
+                    <b>123</b>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile class="recovered">
+                <div class="title ">
+                    <p>recovered</p>
+                    <b>123</b>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile class="deaths">
+                <div class="title">
+                    <p>deaths</p>
+                    <b>123</b>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile class="rate">
+                <div class="title ">
+                    <p>rate</p>
+                    <b>123</b>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+    <mat-form-field appearance="fill" class="dropdown">
+        <mat-label>State</mat-label>
+        <mat-select>
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="page__content regional">
+        <h1>Regional</h1>
+
+        <mat-grid-list [cols]="breakpoint" rowHeight="2:0.75" (window:resize)="onResize($event)">
+            <mat-grid-tile class="confirmed">
+                <div class="title ">
+                    <p>Total</p>
+                    <b>123</b>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile class="recovered">
+                <div class="title ">
+                    <p>recovered</p>
+                    <b>123</b>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile class="deaths">
+                <div class="title">
+                    <p>deaths</p>
+                    <b>123</b>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile class="rate">
+                <div class="title ">
+                    <p>rate</p>
+                    <b>123</b>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+
+    <div class="map-chart">
+        <div class="map">
+
+        </div>
+        <div class="chart">
+
+        </div>
+    </div>
+
+</div>
