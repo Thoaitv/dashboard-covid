@@ -20,3 +20,6 @@ mat-icon{
 .box{
     margin-top: 15px;
 }
+.container-fluid{
+    padding-left: 0!important;
+}

@@ -49,7 +49,7 @@ mat-card{
 .rate{
   background-color: #009688;
 }
-.page__content h1{ 
+.page__content h1{
   color: black;
   margin: 10px 0 30px ;
   font-size:30px
@@ -85,4 +85,91 @@ mat-grid-tile {
 }
 .dropdown{
   margin-top:30px
+}
+
+.statistic-com{
+  width: 100%;
+}
+
+.statistic{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-auto-flow: row;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.b-size{
+  font-size: 40px;
+}
+
+.item{
+  height: 80px;
+  border-radius: 5px;
+  padding: 10px 10px 10px 20px;
+  color: white;
+}
+
+.statistic-confirmed{
+  background-color: #683bb7;
+}
+
+.statistic-recovered {
+  background: #059689;
+}
+
+.statistic-deaths {
+  background-color: #ea1f63;
+}
+
+.statistic-rate {
+  background-color: #c3195c;
+}
+
+.statistic-confirmed-c {
+  background-color: #522ea8
+  ;
+}
+
+.statistic-recovered-c {
+  background: #00796b
+  ;
+}
+
+.statistic-deaths-c {
+  background-color: #880d50
+
+  ;
+}
+
+.statistic-rate-c {
+  background-color: #c3195c;
+}
+
+.statistic .title {
+  font-size: 16px;
+}
+
+.statistic .data {
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.regional-title .title{
+margin-left: 5px;
+font-size: 12px;
+}
+
+.regional-select{
+  margin-top: -17px;
+}
+
+select{
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 2px #a4a8b0 solid !important;
+  max-width: 250px;
+  margin-top: -12px;
+  font-weight: 600;
+  padding-left: 2px !important;
 }

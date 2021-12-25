@@ -18,13 +18,28 @@ import { StatisticsComponent } from './home/statistics/statistics.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { CountUpModule } from 'ngx-countup';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { ChartsComponent } from './home/charts/charts.component';
+import { MapComponent } from './home/map/map.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SidebarComponent,
     ListRegionalComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    ChartsComponent,
+    MapComponent,
+    DashboardComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -37,7 +52,14 @@ import { MatTableModule } from '@angular/material/table';
     MatCardModule,
     MatSelectModule,
     MatGridListModule,
-    MatTableModule
+    MatTableModule,
+    NgxChartsModule,
+    BrowserAnimationsModule,
+    CountUpModule,
+    HttpClientModule,
+    FormsModule,
+    LeafletModule,
+    NgxPaginationModule,
 
   ],
   providers: [],

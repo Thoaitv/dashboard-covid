@@ -29,6 +29,22 @@
     left: 50%;
     transform: translate(-50%, -50%);
     position:absolute;
-    text-align: center;
+
   }
+  #excel-table td, #excel-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #excel-table tr:ho  ver {background-color: #ddd;}
   
+  #excel-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+#excel-table{
+    font-size:1.5rem
+}

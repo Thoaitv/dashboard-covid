@@ -1,8 +1,35 @@
 <div class="container page">
     <div class="page__box">List Regional</div>
     <div class="page__content shadow">
-        <div class="page__content-data">
-            CONTENT
+        <div class="page__content-data" style="width:1000px">
+
+            <button type="button" class="btn btn-success my-4 mr-4" (click)="exportexcel()">Export to Excel</button>
+            <button type="button" class="btn btn-warning" (click)="exportPDF()">Export
+                to
+                PDF</button>
+            <div id="pdfTable" #pdfTable>
+                <table class="table table-striped" id="excel-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">countryregion</th>
+                            <th scope="col">confirmed</th>
+                            <th scope="col">deaths</th>
+                            <th scope="col">recovered</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let country of countryList | paginate: { itemsPerPage: 10, currentPage: p }">
+                            <td scope="row">{{country.countryregion}}</td>
+                            <td>{{country.confirmed}}</td>
+                            <td>{{country.deaths}}</td>
+                            <td>{{country.recovered}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <pagination-controls style="font-size:1rem;    text-align: center;" (pageChange)="p = $event">
+            </pagination-controls>
         </div>
     </div>
 </div>

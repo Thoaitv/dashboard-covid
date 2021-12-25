@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { ListRegionalComponent } from './home/list-regional/list-regional.component';
 import { NewsComponent } from './home/news/news.component';
@@ -12,9 +13,9 @@ const routes: Routes = [
       { path: 'statistics', component: StatisticsComponent },
       { path: 'news', component: NewsComponent },
       { path: 'list-regional', component: ListRegionalComponent },
+      { path: '', redirectTo: '/statistics', pathMatch: 'full' }
     ]
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({
