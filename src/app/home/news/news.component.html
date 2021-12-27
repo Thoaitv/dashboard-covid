@@ -1,8 +1,62 @@
-<div class="container page">
-    <div class="page__box">NEWS</div>
-    <div class="page__content shadow">
-        <div class="page__content-data">
-            CONTENT
+<div class="contain">
+    <h2>Hot News </h2>
+    <div class="list">
+        <div class="news" *ngFor="let item of items" >
+      
+            <i class="fas fa-trash-alt remove" (click)="onDelete(item.$key)"></i>
+            <i (click)="populateForm(item)" class="fas fa-edit edit"></i>
+           <div class="k" (click)="direct(item)">
+                <h3>{{item.name}}</h3>
+           
+                <div class="imgBox">
+                    <img [src]="item.imgUrl" alt="">
+                </div>
+                <p>{{ item.description }}</p>
+            </div>
+            
+           
         </div>
+    
+    </div>
+    <div class="action">
+       <span (click)="show()"  *ngIf="!isShow" class="add"> <i class="fas fa-plus"></i>Add news</span>
+       <span *ngIf="isShow" (click)="hide()" class="hide"> <i class="fas fa-window-close"></i> Close</span>
+       <div class="form" *ngIf="isShow">
+        <form #addForm="ngForm" (ngSubmit)="addNews(addForm.value)" novalidate>
+            <div class="formGroup">
+                <label for="">News Name</label>
+                <input type="text" name="nameNews" [(ngModel)]="name" required #nameNews="ngModel" ngModel >
+                <br>
+             
+                <small *ngIf="nameNews.errors?.required&&nameNews.touched" class="text-danger">Required</small>
+            </div>
+            <div class="formGroup">
+                <label for="">Link img</label>
+                <input type="text" name="imgUrl" [(ngModel)]="imgUrl" required #imgLink="ngModel" ngModel>
+                <br>
+                <small *ngIf="imgLink.errors?.required&&imgLink.touched" class="text-danger">Required</small>
+            </div>
+            <div class="formGroup">
+                <label for="">Link news</label>
+                <input type="text" name="url" [(ngModel)]="url" required #urlink="ngModel" ngModel>
+                <br>
+                <small *ngIf="urlink.errors?.required&&urlink.touched" class="text-danger">Required</small>
+            </div>
+            <div class="formGroup">
+                <label for="">Description</label>
+                <input type="text" name="description" [(ngModel)]="description" required #des="ngModel" ngModel>
+                <br>
+                <small *ngIf="des.errors?.required&&des.touched" class="text-danger">Required</small>
+            </div>
+            <button type="submit" [disabled]="!addForm.valid" >Submit</button>
+        </form>
+       </div>
+    </div>
+    <div class="hotContent" *ngIf="showNews">
+       <h2>Content news</h2>
+        <h3>{{name}}</h3>
+        <img [src]="imgUrl" alt="">
+        <p>{{description}}</p>
+
     </div>
 </div>
