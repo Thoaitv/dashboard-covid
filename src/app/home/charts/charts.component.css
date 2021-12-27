@@ -13,13 +13,14 @@
 .legend-item {
   display: flex;
   justify-content: center;
+  padding-top: 50px;
 }
 
 .confirmed-symbol,
 .recovered-symbol,
 .deaths-symbol {
   width: 20px;
-  height: 0;
+  height: 0px;
   margin: auto;
   margin-right: 6px;
 }
